@@ -1,14 +1,12 @@
 
 # CSE-482: Steam Game Recommender
 
-A brief description of what this project does and who it's for
-
-## Documentation
-
-[Documentation](https://linktodocumentation)
-
+Desc
 
 ## Authors
 
 - [@jyax](https://www.github.com/jyax)
-
+- [@example](https://www.github.com/example)
+- [@example](https://www.github.com/example)
+- [@example](https://www.github.com/example)
+- [@example](https://www.github.com/example)
