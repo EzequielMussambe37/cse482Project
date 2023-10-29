@@ -4,7 +4,7 @@ import configparser
 import json
 
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read('cfg.ini')
 key = config.get('api', 'steamapikey')
 
 sc = Steam(key)
