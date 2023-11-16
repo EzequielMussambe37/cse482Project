@@ -1,0 +1,6 @@
+flask
+streamlit
+gunicorn
+Flask-Failsafe
+mysql-connector-python
+steamsignin

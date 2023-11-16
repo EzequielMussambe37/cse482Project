@@ -1,0 +1,5 @@
+#ignore all ini files
+*.ini
+
+#ignore all csv files
+*.csv

@@ -50,7 +50,6 @@
         {
             "appid": 105600,
             "name": "Terraria",
-            "playtime_2weeks": 79,
             "playtime_forever": 80,
             "img_icon_url": "858961e95fbf869f136e1770d586e0caefd4cfac",
             "has_community_visible_stats": true,
@@ -192,7 +191,6 @@
         {
             "appid": 238960,
             "name": "Path of Exile",
-            "playtime_2weeks": 3,
             "playtime_forever": 100,
             "img_icon_url": "1110764aac57ac28d7ffd8c43071c75d5482a9c9",
             "has_community_visible_stats": true,
@@ -1169,7 +1167,6 @@
         {
             "appid": 381210,
             "name": "Dead by Daylight",
-            "playtime_2weeks": 44,
             "playtime_forever": 38893,
             "img_icon_url": "aa152097a700fd6f4707397ce41794ea30874790",
             "has_community_visible_stats": true,
@@ -1431,7 +1428,6 @@
         {
             "appid": 548430,
             "name": "Deep Rock Galactic",
-            "playtime_2weeks": 9,
             "playtime_forever": 413,
             "img_icon_url": "e033e23c29a192a17c16a7645a2b423ac64ff447",
             "has_community_visible_stats": true,
@@ -2598,7 +2594,7 @@
         },
         {
             "appid": 1151640,
-            "name": "Horizon Zero Dawn",
+            "name": "Horizon Zero Dawn™ Complete Edition",
             "playtime_forever": 21,
             "img_icon_url": "08a1b6df68bdc8c28c974b79325ed8c89417af48",
             "has_community_visible_stats": true,
@@ -2756,14 +2752,14 @@
         {
             "appid": 1267910,
             "name": "Melvor Idle",
-            "playtime_2weeks": 4418,
-            "playtime_forever": 20754,
+            "playtime_2weeks": 8,
+            "playtime_forever": 20762,
             "img_icon_url": "88eca64c662c128de095b4e452881398ac71969c",
             "has_community_visible_stats": true,
-            "playtime_windows_forever": 20754,
+            "playtime_windows_forever": 20762,
             "playtime_mac_forever": 0,
             "playtime_linux_forever": 0,
-            "rtime_last_played": 1696796185,
+            "rtime_last_played": 1697921559,
             "playtime_disconnected": 0
         },
         {
@@ -3011,14 +3007,14 @@
         {
             "appid": 1621690,
             "name": "Core Keeper",
-            "playtime_2weeks": 427,
-            "playtime_forever": 427,
+            "playtime_2weeks": 858,
+            "playtime_forever": 1602,
             "img_icon_url": "661ff82410b3c1c49e0f6a5e3715c445dbccfb77",
             "has_community_visible_stats": true,
-            "playtime_windows_forever": 427,
+            "playtime_windows_forever": 1602,
             "playtime_mac_forever": 0,
             "playtime_linux_forever": 0,
-            "rtime_last_played": 1696896285,
+            "rtime_last_played": 1697343539,
             "playtime_disconnected": 0
         },
         {
@@ -3134,7 +3130,6 @@
         {
             "appid": 1245620,
             "name": "ELDEN RING",
-            "playtime_2weeks": 23,
             "playtime_forever": 11782,
             "img_icon_url": "b6e290dd5a92ce98f89089a207733c70c41a1871",
             "has_community_visible_stats": true,
@@ -3301,7 +3296,6 @@
         {
             "appid": 2296990,
             "name": "We Were Here Expeditions: The FriendShip",
-            "playtime_2weeks": 15,
             "playtime_forever": 15,
             "img_icon_url": "d46715ccbf52a046bf65db2fc1ead06aa8c1fe06",
             "has_community_visible_stats": true,

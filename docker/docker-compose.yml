@@ -1,0 +1,17 @@
+# Author: Jake Yax
+
+version: "3.8"
+services:
+  # A defined name for the container
+  flask-app:
+    container_name: cse482-container_flask-app
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    stdin_open: true
+    tty: true
+    ports:
+      - "8080:8080"
+    # Mount local dir to container
+    volumes:
+      - .:/app
