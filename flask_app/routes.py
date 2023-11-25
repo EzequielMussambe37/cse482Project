@@ -1,4 +1,4 @@
-# Author: Prof. MM Ghassemi <ghassem3@msu.edu>
+# Author: Jake Yax
 from flask import current_app as app
 from flask import render_template, redirect, request
 from .utils.database.database  import database
@@ -14,8 +14,7 @@ def root():
 
 @app.route('/home')
 def home():
-	x     = random.choice(['I started university when I was a wee lad of 15 years.','I have a pet sparrow.','I write poetry.'])
-	return render_template('home.html', fun_fact = x)
+	return render_template('login.html')
 
 @app.route('/resume')
 def resume():
