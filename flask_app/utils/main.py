@@ -1,11 +1,10 @@
 from steam import Steam
 from datetime import datetime
-import configparser
 import json
+from flask import current_app as app
 
-config = configparser.ConfigParser()
-config.read('cfg.ini')
-key = config.get('api', 'steamapikey')
+
+key = app.config['STEAM_API_KEY']
 
 sc = Steam(key)
 result = sc.users.get_owned_games("76561198203717873")
