@@ -1,5 +1,8 @@
 #ignore all ini files
 *.ini
+<<<<<<< HEAD
 
 #ignore all csv files
 *.csv
+=======
+>>>>>>> 2e162c034f602002cf6699afdc1ab3650e1f8dff
