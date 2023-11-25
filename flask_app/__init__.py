@@ -10,9 +10,13 @@ def create_app():
     app.secret_key = os.urandom(16)
 
     config = configparser.ConfigParser()
-    config.read('static/config.ini')
+    config.read(os.path.join(os.path.dirname(__file__), 'static', 'config.ini'))
     app.config['STEAM_API_KEY'] = config.get('api', 'steamapikey')
-    app.config['']
+    app.config['DATABASE_NAME'] = config.get('database', 'databasename')
+    app.config['DATABASE_ENDPOINT'] = config.get('database', 'databaseendpoint')
+    app.config['DATABASE_USER'] = config.get('database', 'databaseuser')
+    app.config['DATABASE_PASSWORD'] = config.get('database', 'databasepassword')
+
 
     from .utils.database.database import database
     db = database()
