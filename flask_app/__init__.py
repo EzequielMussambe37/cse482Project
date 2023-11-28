@@ -24,7 +24,7 @@ def create_app():
         app.config['DATABASE_USER'],
         app.config['DATABASE_PASSWORD']
     )
-    db.createTables(purge=False)
+    db.createTables(purge=True)
 
     with app.app_context():
         return app

@@ -14,14 +14,14 @@ class Database:
         self.port = db_port
         self.password = db_password
 
-    def query(self, query="SELECT CURDATE()", parameters=""):
+    def query(self, query="SELECT CURDATE()", parameters=None):
 
         cnx = mysql.connector.connect(host=self.host,
                                       user=self.user,
                                       password=self.password,
                                       port=self.port,
                                       database=self.database,
-                                      charset='latin1')
+                                      charset='utf8mb4')
 
         if parameters is not None:
             cur = cnx.cursor(dictionary=True)
@@ -41,13 +41,17 @@ class Database:
         cnx.close()
         return row
 
+    def dropTables(self, data_path='flask_app/database/'):
+        for table in os.listdir(data_path + 'create_tables/'):
+            table_name = os.path.splitext(table)[0]
+            self.query(f"DROP TABLE IF EXISTS {table_name}")
+            print(f"Dropped table: {table_name}")
+
     def createTables(self, purge=False, data_path='flask_app/database/'):
 
         # If purge is True, drop existing tables
         if purge:
-            for table in os.listdir(data_path + 'create_tables/'):
-                table_name = os.path.splitext(table)[0]
-                self.query(f"DROP TABLE IF EXISTS {table}")
+            self.dropTables()
 
         for table in os.listdir(data_path + 'create_tables/'):
             table_name = os.path.splitext(table)[0]
@@ -55,19 +59,22 @@ class Database:
                 current_table = file.read()
                 self.query(current_table)
                 print(f"Created new table: {table_name}")
-
-        # Insert data for all CSV files without caring about order
-        for table in os.listdir(data_path + 'initial_data/'):
-            print(f"Grabbing info from: {table}")
-            table_name = os.path.splitext(table)[0]
-            print(f"Inserting into: {table_name}")
-            with open(os.path.join(data_path + 'initial_data/', table), 'r') as file:
-                reader = csv.reader(file)
-                columns = next(reader)
-                for row in reader:
-                    row = [None if item == 'NULL' else item for item in row]  # Replace 'NULL' string with None
-                    self.insertRows(table_name, columns, [row])
-                    print("Calling Insert function...")
+            # Insert data for all CSV files without caring about order
+            for table in os.listdir(data_path + 'initial_data/'):
+                print(f"Grabbing info from: {table}")
+                table_name = os.path.splitext(table)[0]
+                print(f"Inserting into: {table_name}")
+                with open(os.path.join(data_path + 'initial_data/', table), 'r') as file:
+                    reader = csv.reader(file)
+                    columns = next(reader)
+                    for row in reader:
+                        row = [None if item == 'NULL' else item for item in row]  # Replace 'NULL' string with None
+                        try:
+                            self.insertRows(table_name, columns, [row])
+                        except mysql.connector.errors.IntegrityError as err:
+                            if err.errno == 1062:
+                                pass  # Ignore duplicates
+                        print("Calling Insert function...")
         print("All finished!")
 
     def insertRows(self, table='table', columns=['x','y'], parameters=[['v11','v12'],['v21','v22']]):
