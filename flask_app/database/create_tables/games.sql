@@ -11,9 +11,10 @@ CREATE TABLE IF NOT EXISTS `games` (
 `AveragePlaytime2W`         int             DEFAULT NULL,
 `MedianPlaytimeForever`     int             DEFAULT NULL,
 `MedianPlaytime2W`          int             DEFAULT NULL,
-`Developers`                varchar(100),
-`Publishers`                varchar(100),
-`Categories`                varchar(400),
-`Genres`                    varchar(255),
-`Tags`                      varchar(300),
-)
+`Developers`                varchar(100)    NOT NULL,
+`Publishers`                varchar(100)    NOT NULL,
+`Categories`                varchar(400)    NOT NULL,
+`Genres`                    varchar(255)    NOT NULL,
+`Tags`                      varchar(300)    NOT NULL,
+PRIMARY KEY(`AppID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT 'Game Dataset';

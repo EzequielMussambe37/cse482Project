@@ -4,16 +4,15 @@ import csv
 import datetime
 import os
 import time
-from flask import current_app as app
 
 
-class database:
-    def __init__(self, purge=False):
-        self.database = app.config['DATABASE_NAME']
-        self.host = app.config['DATABASE_ENDPOINT']
-        self.user = app.config['DATABASE_USER']
-        self.port = 3306
-        self.password = app.config['DATABASE_PASSWORD']
+class Database:
+    def __init__(self, db_name, db_endpoint, db_user, db_password, db_port=3306, purge=False):
+        self.database = db_name
+        self.host = db_endpoint
+        self.user = db_user
+        self.port = db_port
+        self.password = db_password
 
     def query(self, query="SELECT CURDATE()", parameters=""):
 
